@@ -1,0 +1,18 @@
+@import "./variables";
+@import "./grid";
+@import "./header";
+@import "./variables";
+@import "./inputs";
+body {
+  font-family: $font-family-sans;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .logo {
+    font-family: $font-family-serif;
+  }
+}
