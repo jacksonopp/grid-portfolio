@@ -10,6 +10,8 @@
     "start:watch": "parcel watch index.html"
   },
   "devDependencies": {
+    "cssnano": "^4.1.10",
+    "parcel-plugin-static-files-copy": "^2.3.1",
     "typescript": "^3.9.3"
   },
   "dependencies": {}

@@ -2,11 +2,11 @@ import { PortfolioItem, createPortfolioItem } from './portfolioItem';
 const portfolioDiv = document.getElementById('portfolio-container');
 
 const portfolio = [
-  new PortfolioItem('http://www.placekitten.com/800/300', 'title one', '#', '#'),
-  new PortfolioItem('http://www.placekitten.com/800/300', 'title two', '#', '#'),
-  new PortfolioItem('http://www.placekitten.com/800/300', 'title three', '#', '#'),
-  new PortfolioItem('http://www.placekitten.com/800/300', 'title four', '#', '#'),
-  new PortfolioItem('http://www.placekitten.com/800/300', 'title five', '#', '#'),
+  new PortfolioItem('/img/gifTastic.png', 'GifTastic', '#', '#'),
+  new PortfolioItem('/img/newsScrape.png', 'News Scraper', '#', '#'),
+  new PortfolioItem('/img/nytSearch.png', 'NYT Search', '#', '#'),
+  new PortfolioItem('/img/rlgl.png', 'Red Light Green Light', '#', '#'),
+  new PortfolioItem('/img/shyband.png', 'Shy Band', '#', '#'),
 ];
 
 export function createPortfolio() {

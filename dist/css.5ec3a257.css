@@ -70,6 +70,15 @@ button.nostyle:hover {
   position: fixed;
   top: 1rem;
   left: 1rem;
+  z-index: 9000;
+}
+.sidebar .hamburger i {
+  color: #2a9d8f;
+  opacity: 0.7;
+  transition: all 0.3s;
+}
+.sidebar .hamburger i:hover {
+  opacity: 1;
 }
 .sidebar .hamburger.close {
   display: none;
@@ -179,20 +188,32 @@ button.nostyle:hover {
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.3);
+  background-color: black;
 }
 .content .portfolio .portfolio-item img {
+  transition: all 0.3s;
   min-width: 100%;
   max-height: 300px;
   object-fit: cover;
+  opacity: 0.4;
 }
-.content .portfolio .portfolio-item h4 {
+.content .portfolio .portfolio-item .portfolio-title {
   position: absolute;
   text-align: center;
-  padding: 1em 0;
+  padding: 0;
   width: 100%;
   background-color: rgba(42, 157, 143, 0.7);
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.3);
   color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.content .portfolio .portfolio-item .portfolio-title:hover {
+  background-color: #2da99a;
+}
+.content .portfolio .portfolio-item .portfolio-title:active {
+  background-color: #279184;
 }
 .content .portfolio .portfolio-item .links {
   position: absolute;
@@ -208,12 +229,16 @@ button.nostyle:hover {
   padding: 1rem;
   border-radius: 4px;
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
 }
 .content .portfolio .portfolio-item .links .link-btn:hover {
   background-color: #2da99a;
 }
 .content .portfolio .portfolio-item .links .link-btn:active {
   background-color: #279184;
+}
+.content .portfolio .portfolio-item:hover img {
+  opacity: 0.7;
 }
 .content .contact {
   grid-area: contact;

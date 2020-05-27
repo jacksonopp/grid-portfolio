@@ -10,14 +10,18 @@ let isOpen = true;
 export function openCloseMenu() {
   document.querySelector('#close').addEventListener('click', (e: Event) => toggleMenu());
   burger.addEventListener('click', () => toggleMenu());
-  window.addEventListener('resize', () => toggleMenuFromSize(window.screen.width));
+  window.addEventListener('resize', () => toggleMenuFromSize(window.innerWidth));
   links.forEach((link) =>
     link.addEventListener('click', () => {
-      closeMenu();
-      isOpen = false;
+      console.log(window.innerWidth);
+      if (window.innerWidth < 1058) {
+        console.log('triggered');
+        closeMenu();
+        isOpen = false;
+      }
     })
   );
-  toggleMenuFromSize(window.screen.width);
+  toggleMenuFromSize(window.innerWidth);
 }
 
 function toggleMenu() {
@@ -44,6 +48,7 @@ function closeMenu() {
 }
 
 function toggleMenuFromSize(size: number) {
+  console.log(size);
   if (size < 888) {
     closeMenu();
     isOpen = false;

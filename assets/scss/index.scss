@@ -70,6 +70,15 @@ button.nostyle {
     position: fixed;
     top: 1rem;
     left: 1rem;
+    z-index: 9000;
+    i {
+      color: $color-teal;
+      opacity: 0.7;
+      transition: all 0.3s;
+      &:hover {
+        opacity: 1;
+      }
+    }
     &.close {
       display: none;
     }
@@ -202,19 +211,31 @@ button.nostyle {
       align-items: center;
       justify-content: center;
       margin-bottom: 1rem;
+      box-shadow: 5px 5px 10px 1px $black-light-transparent;
+      background-color: $black;
       img {
+        transition: all 0.3s;
         min-width: 100%;
         max-height: 300px;
         object-fit: cover;
+        opacity: 0.4;
       }
-      h4 {
+      .portfolio-title {
         position: absolute;
         text-align: center;
-        padding: 1em 0;
+        padding: 0;
         width: 100%;
         background-color: transparentize($color: $color-teal, $amount: 0.3);
         box-shadow: 0px 2px 5px 1px $black-light-transparent;
         color: white;
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+          background-color: lighten($color: $color-teal, $amount: 3);
+        }
+        &:active {
+          background-color: darken($color: $color-teal, $amount: 3);
+        }
       }
       .links {
         position: absolute;
@@ -230,12 +251,18 @@ button.nostyle {
           padding: 1rem;
           border-radius: 4px;
           box-shadow: 2px 2px 5px 1px $black-light-transparent;
+          transition: all 0.3s;
           &:hover {
             background-color: lighten($color: $color-teal, $amount: 3);
           }
           &:active {
             background-color: darken($color: $color-teal, $amount: 3);
           }
+        }
+      }
+      &:hover {
+        img {
+          opacity: 0.7;
         }
       }
     }

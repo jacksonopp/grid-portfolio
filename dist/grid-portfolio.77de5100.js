@@ -140,15 +140,20 @@ function openCloseMenu() {
     return toggleMenu();
   });
   window.addEventListener('resize', function () {
-    return toggleMenuFromSize(window.screen.width);
+    return toggleMenuFromSize(window.innerWidth);
   });
   links.forEach(function (link) {
     return link.addEventListener('click', function () {
-      closeMenu();
-      isOpen = false;
+      console.log(window.innerWidth);
+
+      if (window.innerWidth < 1058) {
+        console.log('triggered');
+        closeMenu();
+        isOpen = false;
+      }
     });
   });
-  toggleMenuFromSize(window.screen.width);
+  toggleMenuFromSize(window.innerWidth);
 }
 
 exports.openCloseMenu = openCloseMenu;
@@ -180,6 +185,8 @@ function closeMenu() {
 }
 
 function toggleMenuFromSize(size) {
+  console.log(size);
+
   if (size < 888) {
     closeMenu();
     isOpen = false;
@@ -189,7 +196,6 @@ function toggleMenuFromSize(size) {
   }
 }
 },{}],"assets/ts/portfolioItem.ts":[function(require,module,exports) {
-"\n";
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -213,7 +219,7 @@ function () {
 exports.PortfolioItem = PortfolioItem;
 
 function createPortfolioItem(portfolioItem) {
-  return "\n  <img src=\"" + portfolioItem.photoUrl + "\" alt=\"" + portfolioItem.title + "\" />\n  <h4>" + portfolioItem.title + "</h4>\n  <div class=\"links\">\n    <a href=\"" + portfolioItem.githubUrl + "\" class=\"link-btn\">Github Code</a>\n    <a href=\"" + portfolioItem.appUrl + "\" class=\"link-btn\">View App</a>\n  </div>\n  ";
+  return "\n  <img src=\"" + portfolioItem.photoUrl + "\" alt=\"" + portfolioItem.title + "\" class=\"lazy\"/>\n  <a href=\"" + portfolioItem.appUrl + "\" class=\"portfolio-title\">\n    <h3>" + portfolioItem.title + "</h3>\n  </a>\n  <div class=\"links\">\n    <a href=\"" + portfolioItem.githubUrl + "\" class=\"link-btn\">View Code</a>\n    <a href=\"" + portfolioItem.appUrl + "\" class=\"link-btn\">View App</a>\n  </div>\n  ";
 }
 
 exports.createPortfolioItem = createPortfolioItem;
@@ -228,7 +234,7 @@ exports.createPortfolio = void 0;
 var portfolioItem_1 = require("./portfolioItem");
 
 var portfolioDiv = document.getElementById('portfolio-container');
-var portfolio = [new portfolioItem_1.PortfolioItem('http://www.placekitten.com/800/300', 'title one', '#', '#'), new portfolioItem_1.PortfolioItem('http://www.placekitten.com/800/300', 'title two', '#', '#'), new portfolioItem_1.PortfolioItem('http://www.placekitten.com/800/300', 'title three', '#', '#'), new portfolioItem_1.PortfolioItem('http://www.placekitten.com/800/300', 'title four', '#', '#'), new portfolioItem_1.PortfolioItem('http://www.placekitten.com/800/300', 'title five', '#', '#')];
+var portfolio = [new portfolioItem_1.PortfolioItem('/img/gifTastic.png', 'GifTastic', '#', '#'), new portfolioItem_1.PortfolioItem('/img/newsScrape.png', 'News Scraper', '#', '#'), new portfolioItem_1.PortfolioItem('/img/nytSearch.png', 'NYT Search', '#', '#'), new portfolioItem_1.PortfolioItem('/img/rlgl.png', 'Red Light Green Light', '#', '#'), new portfolioItem_1.PortfolioItem('/img/shyband.png', 'Shy Band', '#', '#')];
 
 function createPortfolio() {
   portfolio.forEach(function (item) {
@@ -338,7 +344,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53058" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57080" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
