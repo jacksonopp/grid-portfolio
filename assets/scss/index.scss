@@ -7,6 +7,7 @@ body {
   height: 100vh;
   grid-template-columns: auto 1fr;
   grid-template-areas: "sidebar content";
+  max-width: 100vw;
 }
 
 a {
@@ -43,6 +44,9 @@ a {
 
 h1 {
   font-size: 3rem;
+  @media screen and (max-width: 561px) {
+    font-size: 2.2rem;
+  }
 }
 h2 {
   font-size: 2rem;
@@ -52,7 +56,7 @@ h3 {
 }
 
 p {
-  width: 60ch;
+  max-width: 60ch;
 }
 
 button.nostyle {
@@ -146,6 +150,11 @@ button.nostyle {
     padding-right: 1rem;
     padding-bottom: 1rem;
     box-shadow: inset 0px 7px 9px -7px $black-light-transparent, inset 0px -7px 9px -7px $black-light-transparent;
+
+    @media screen and (max-width: 562px) {
+      padding-right: 0;
+      padding-left: 0;
+    }
   }
 
   .intro {
@@ -154,6 +163,11 @@ button.nostyle {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    max-width: 100vw;
+    h1,
+    h2 {
+      align-self: center;
+    }
   }
   .about {
     @extend .child;
@@ -169,6 +183,7 @@ button.nostyle {
     row-gap: 1rem;
     align-items: start;
     padding: 1rem 0 1rem 1rem;
+    min-height: 100vh;
     @media screen and (max-width: 1146px) {
       grid-template-rows: repeat(3, 1fr);
       grid-template-areas:
@@ -176,6 +191,7 @@ button.nostyle {
         "description description"
         "link link";
       padding: 1rem 0 0 0;
+      max-width: 100vw;
     }
     .description {
       grid-area: description;
@@ -206,6 +222,7 @@ button.nostyle {
   .portfolio {
     @extend .child;
     grid-area: portfolio;
+    max-width: 100vw;
 
     .portfolio-container {
       max-width: 100vw;
