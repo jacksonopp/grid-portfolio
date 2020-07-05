@@ -15,5 +15,7 @@
     "parcel-plugin-static-files-copy": "^2.3.1",
     "typescript": "^3.9.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "parcel": "^1.12.4"
+  }
 }
